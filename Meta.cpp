@@ -1,6 +1,3 @@
-// This work is licensed under a Creative Commons Attribution 3.0 Unported License.
-// http://creativecommons.org/licenses/by/3.0/deed.en_US
-
 #include "Precompiled.h"
 
 Member::Member( std::string string, unsigned val, MetaData *meta ) : name( string ), offset( val ), data( meta ), next( NULL )
@@ -9,6 +6,7 @@ Member::Member( std::string string, unsigned val, MetaData *meta ) : name( strin
 
 Member::~Member( )
 {
+    delete this;
 }
 
 const std::string& Member::Name( void ) const
@@ -42,6 +40,15 @@ MetaData::MetaData( std::string string, unsigned val ) : name( string ), size( v
 
 MetaData::~MetaData( )
 {
+    /*while (members)
+    {
+        Member* temp = members;
+        members = members->Next();
+        delete temp;
+    }
+
+    if (lastMember)
+        delete lastMember;*/
 }
 
 void MetaData::Init( std::string string, unsigned val )

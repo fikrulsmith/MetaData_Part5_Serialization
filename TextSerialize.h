@@ -10,5 +10,9 @@ template <typename T>
 void TextSerializePrim( std::ostream& os, RefVariant prim )
 {
   Padding( os );
-  os << prim.GetValue<RemQual<T>::type>( ) << std::endl;
+
+  /*if (std::is_enum<T>::value)
+	  os << enumToString(prim.GetValue<RemQual<T>::type>()) << std::endl;
+  else*/
+      os << prim.GetValue<RemQual<T>::type>() << std::endl;
 }

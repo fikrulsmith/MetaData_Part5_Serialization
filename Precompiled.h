@@ -7,9 +7,11 @@
 #include <iostream>
 #include <ostream>
 #include <cassert>
+#include <memory>
 
 #include "Meta.h"
 #include "RemQual.h"
 #include "Variant.h"
 #include "RefVariant.h"
 #include "TextSerialize.h"
+

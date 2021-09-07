@@ -1,6 +1,3 @@
-// This work is licensed under a Creative Commons Attribution 3.0 Unported License.
-// http://creativecommons.org/licenses/by/3.0/deed.en_US
-
 #pragma once
 
 // Used to check if a type is a pointer or not
@@ -48,7 +45,7 @@ struct RemQual<T&&>
 };
  
 template <typename T>
-struct RemQual<const T *>
+struct RemQual<const T*>
 {
   typedef typename RemQual<T *>::type type;
 };

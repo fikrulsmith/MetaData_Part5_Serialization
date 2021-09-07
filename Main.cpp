@@ -1,8 +1,6 @@
-// This work is licensed under a Creative Commons Attribution 3.0 Unported License.
-// http://creativecommons.org/licenses/by/3.0/deed.en_US
-
 #include "Precompiled.h"
 #include "Object.h"
+#include "Vector.h"
 
 DEFINE_META_POD( int );
 DEFINE_META_POD( int * );
@@ -12,9 +10,13 @@ DEFINE_META_POD( float );
 DEFINE_META_POD( bool );
 DEFINE_META_POD( double );
 DEFINE_META_POD( std::string );
+DEFINE_META_POD( Test );
 
 void main( void )
 {
+#if defined(DEBUG) | defined(_DEBUG)
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#endif
   int x = 5;
   
   RefVariant refv;
@@ -32,8 +34,12 @@ void main( void )
   Object ob( 14 );
 
   RefVariant object = ob;
-
+  //std::cout << object.Meta()->Members()->Name() << std::endl;
   object.Serialize( std::cout );
+  //std::cout << object.GetValue<int>();
 
-  getchar( );
+  Test2 flu = Test2::test22;
+  std::string fuck = "Test         2";
+  std::cout << lexical_cast_toStr<Test2>(flu);
+  std::cout << static_cast<int>(lexical_cast_toEnum<Test2>(fuck));
 }

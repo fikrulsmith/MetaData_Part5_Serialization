@@ -45,6 +45,9 @@
     <ClCompile Include="TextSerialize.cpp">
       <Filter>Source Files\Serialization</Filter>
     </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Meta.h">
@@ -70,6 +73,12 @@
     </ClInclude>
     <ClInclude Include="TextSerialize.h">
       <Filter>Source Files\Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enumconv.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -32,6 +32,7 @@ void TextSerialize( std::ostream& os, RefVariant var )
   while(mem)
   {
     ++level;
+    os << mem->Name() << std::endl;
     void *offsetData = PTR_ADD( var.Data( ), mem->Offset( ) );
     mem->Meta( )->Serialize( os, RefVariant( mem->Meta( ), offsetData ) );
     mem = mem->Next( );
